@@ -30,4 +30,13 @@ public class Constraints {
 			}
 		});
 	}
+	
+	public static void setTextFieldEmail(TextField txt)
+	{
+		txt.textProperty().addListener((obs, oldValue, newValue) -> {
+			if(newValue != null && !newValue.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")) {
+				txt.setText(oldValue);
+			}
+		});
+	}
 }
